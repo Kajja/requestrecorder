@@ -5,7 +5,7 @@ To use the module with Anax-MVC first require it in your composer.json file like
 
 
 Then, it is recommended that you register the module as a service:
-`        $this->set('recorder', function() {
+```PHP        $this->set('recorder', function() {
             $dbh = new \Kajja\Recorder\RequestDatabase();
             $dbh->setOptions([
                 'dsn'           => 'sqlite:' . ANAX_APP_PATH . '.htphpmvc.sqlite',
@@ -16,4 +16,4 @@ Then, it is recommended that you register the module as a service:
             $recorder = new \Kajja\Recorder\RequestRecord($dbh, $formatter);
             return $recorder;
         });
-`
+```
