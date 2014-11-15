@@ -1,7 +1,21 @@
 {
-	"name": "kajja/recorder",
-	"type":	"library"
-	"autoload": {
-        "psr-4": { "Mife\\": "src/" }
+	"name": "kajja/requestrecorder",
+	"description": "PHP classes to store and retrieve HTTP-request info",
+	"type":	"library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Mikael Feuk",
+			"role": "Developer"
+		}
+	]
+    "require": {
+    	"php": ">=5.4",
+    	"mos/cdatabase": "dev-master" 
+    },
+    "autoload": {
+    	"psr-4": {
+    		"Kajja\\": "src/"
+    	}
     }
 }
