@@ -8,7 +8,7 @@
 			"name": "Mikael Feuk",
 			"role": "Developer"
 		}
-	]
+	],
     "require": {
     	"php": ">=5.4",
     	"mos/cdatabase": "dev-master" 
