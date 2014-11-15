@@ -1,0 +1,7 @@
+{
+	"name": "kajja/recorder",
+	"type":	"library"
+	"autoload": {
+        "psr-4": { "Mife\\": "src/" }
+    }
+}
