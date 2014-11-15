@@ -51,38 +51,15 @@ use Mos\Database\CDatabaseBasic;
  	 */
  	public function createTableIfNotExists()
  	{
-/*
-		$this->sql = "CREATE TABLE IF NOT EXISTS request (session varchar(20), id integer primary key not null auto_increment, uri varchar(2048), method varchar(20), date datetime)";
-		
-		if ($this->dialect == 'sqlite') {
-            $this->sql = str_replace('auto_increment', '', $this->sql);
-        }
-
- 		$this->execute();
-/* 		
- 		if ($result) {
-
- 			$this->createTable('request', [
-			'id' 		=> ['integer', 'not null', 'auto_increment'],
-			'uri' 		=> ['varchar(2048)'],
-			'method'	=> ['varchar(20)'],
-			'date'		=> ['datetime'],
-			'session'	=> ['varchar(20)']
-			]);
-
-			$this->execute();
- 		}
- 		*/
-		/*
-		$this->createTable('request', [
+		$this->createTable("IF NOT EXISTS $this->table", [
 			'session'	=> ['varchar(20)'],
 			'id' 		=> ['integer', 'primary key', 'not null', 'auto_increment'],
 			'uri' 		=> ['varchar(2048)'],
 			'method'	=> ['varchar(20)'],
 			'date'		=> ['datetime']
 			]);
+
 		$this->execute();
-		*/
  	}
 
 
