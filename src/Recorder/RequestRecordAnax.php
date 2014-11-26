@@ -2,6 +2,11 @@
 
 namespace Kajja\Recorder;
 
+/**
+ *
+ *  Subclass to make use of the services in the Anax-MVC framework.
+ *
+ */
 class RequestRecordAnax extends RequestRecord
 {
     private $di; // Reference to Anax-MVC dependency injector object
