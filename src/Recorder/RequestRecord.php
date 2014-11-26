@@ -9,9 +9,9 @@ namespace Kajja\Recorder;
  */
 class RequestRecord
 {
-	private $dbh;			// Ref. to database handler implementing Kajja\Recorder\IDatabaseHandler
-	private $formatter;		// Ref. to object formatting data output implementing Kajja\Recorder\IFormatter
-	private $requestInfo;	// Array with Http-request info
+	protected $dbh;			// Ref. to database handler implementing Kajja\Recorder\IDatabaseHandler
+	protected $formatter;		// Ref. to object formatting data output implementing Kajja\Recorder\IFormatter
+	protected $requestInfo;	// Array with Http-request info
 
 	/**
 	 *
@@ -29,14 +29,13 @@ class RequestRecord
 
 
 	/**
-	 * Get the session id or creates a session unique
+	 * Gets the session id or creates a session unique
 	 * in the table where the request records are saved.
 	 *
 	 * @return session id as string
 	 */
 	private function getSessionId()
 	{
-
 		if (!isset($_SESSION['requestRecorderId'])) {
 			$_SESSION['requestRecorderId'] = time(); // Figure out something better than time()
 		}
