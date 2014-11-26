@@ -11,6 +11,8 @@ Currently, the only information that is saved are:
 
 The module also includes a presentation part that formats the HTTP-request records in the database to HTML, for simple integration into a web project.
 
+There is a special adaptation to the Anax-MVC framework that can be used if you prefer it, see the Usage_with_Anax-MVC documentation.
+
 By Mikael Feuk.
 
 License
@@ -19,3 +21,4 @@ MIT
 
 History
 -------
+v 0.3

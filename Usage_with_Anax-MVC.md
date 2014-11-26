@@ -19,15 +19,20 @@ $app->session;
 
 Then, it is recommended that you register the module as a service, for example (if you do it in your frontcontroller):
 ```php
-$di->set('recorder', function() {
+$di->set('recorder', function() use ($di){
+    // Set up a database connection
     $dbh = new \Kajja\Recorder\RequestDatabase();
     $dbh->setOptions([
         'dsn'           => 'sqlite:' . ANAX_APP_PATH . '.htphpmvc.sqlite',
         'fetch_mode'    => \PDO::FETCH_ASSOC
         ]);
     $dbh->connect();
+
+    // Create a formatter
     $formatter = new \Kajja\Recorder\HTMLFormatter();
-    $recorder = new \Kajja\Recorder\RequestRecord($dbh, $formatter);
+
+    // Initiate the recorder with the database, formatter and di objects
+    $recorder = new \Kajja\Recorder\RequestRecordAnax($dbh, $formatter, $di);
     return $recorder;
 });
 ```
@@ -37,11 +42,11 @@ Explanation of the above:
 * With setupOptions() you set up which database to use and how to retrieve the HTTP-request info. In the example above I have a SQLite database (i.e. you need to set up a database) and the fetch_mode variable specifies that the information must be returned as an array.
 * Connect to the database.
 * A new HTMLFormatter object is created, it is used to format the retrieved records into HTML.
-* A new RequestRecorder object is created. This is the central object. It takes as arguments the RequestDatabase and HTMLFormer objects that we just created.
+* A new RequestRecordAnax object is created. This is the central object. It takes as arguments the RequestDatabase, HTMLFormer and di objects.
 
 To use the new service in your application you can, in your frontcontroller for example, save information from the current HTTP-request by doing:
 ```php
-$app->recorder->save(['/Anax-MVC/webroot/records']);
+$app->recorder->save([]);
 ```
 When used, the recorder service will create a table named 'request' if is doesn't already exist in the database.
 
