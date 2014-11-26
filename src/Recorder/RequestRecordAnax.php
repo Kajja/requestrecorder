@@ -24,7 +24,7 @@ class RequestRecordAnax extends RequestRecord
         $this->formatter = $formatter;
         $this->di = $di;
 
-        $this->requestInfo['uri'] = $di->request->getRoute;
+        $this->requestInfo['uri'] = $di->request->getRoute();
         $this->requestInfo['method'] = $di->request->getServer('REQUEST_METHOD');
     }
 
