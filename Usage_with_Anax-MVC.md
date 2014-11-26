@@ -6,7 +6,7 @@ To use the module with Anax-MVC, first require it in your composer.json file lik
 ```json
 "minimum-stability": "dev",
 "require": {
-	"kajja/requestrecorder": ">=0.2"
+	"kajja/requestrecorder": ">=0.5"
 }
 
 ```
@@ -46,7 +46,7 @@ Explanation of the above:
 
 To use the new service in your application you can, in your frontcontroller for example, save information from the current HTTP-request by doing:
 ```php
-$app->recorder->save([]);
+$app->recorder->save(['http://localhost/Anax-MVC/webroot/records']);
 ```
 When used, the recorder service will create a table named 'request' if is doesn't already exist in the database.
 
