@@ -15,7 +15,7 @@ use Mos\Database\CDatabaseBasic;
  	private $table; // Database table name for the records.
 
  	/**
- 	 * 
+ 	 *
  	 * @param array with setup options
  	 */
  	public function __construct($options = [])

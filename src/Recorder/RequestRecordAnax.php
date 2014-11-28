@@ -35,7 +35,7 @@ class RequestRecordAnax extends RequestRecord
      *
      * @return session id as string
      */
-    private function getSessionId()
+    protected function getSessionId()
     {
         $id = $this->di->session->get('requestRecorderId');
 

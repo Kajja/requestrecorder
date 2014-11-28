@@ -51,8 +51,6 @@ class RequestRecordTest extends \PHPUnit_Framework_TestCase
         $dbh = $this->getMockBuilder('Kajja\Recorder\IDatabaseHandler')->getMock();
         $formatter = $this->getMockBuilder('Kajja\Recorder\IFormatter')->getMock();
 
-        $now = date(\DateTime::RFC2822);
-
         //Setting up expectations
         $dbh->expects($this->once())
             ->method('getAllRecords')

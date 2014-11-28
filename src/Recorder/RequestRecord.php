@@ -34,7 +34,7 @@ class RequestRecord
 	 *
 	 * @return session id as string
 	 */
-	private function getSessionId()
+	protected function getSessionId()
 	{
 		if (!isset($_SESSION['requestRecorderId'])) {
 			$_SESSION['requestRecorderId'] = time(); // Figure out something better than time()
