@@ -1,6 +1,10 @@
 kajja/requestrecorder
 =====================
 
+[![Build Status](https://travis-ci.org/Kajja/requestrecorder.svg?branch=master)](https://travis-ci.org/Kajja/requestrecorder)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Kajja/requestrecorder/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Kajja/requestrecorder/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/Kajja/requestrecorder/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Kajja/requestrecorder/?branch=master)
+
 This is a small PHP module to save HTTP request information in a database and to display the saved HTTP request information.
 
 Currently, the only information that is saved are:
