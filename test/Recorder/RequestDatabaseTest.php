@@ -14,6 +14,7 @@ class RequestDatabaseTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         if (self::$dbh === null) {
+
             // Setting up database
             self::$dbh = new RequestDatabase();
             self::$dbh->setOptions([
