@@ -17,12 +17,13 @@ class RequestDatabaseTest extends \PHPUnit_Framework_TestCase
             // Setting up database
             self::$dbh = new RequestDatabase();
             self::$dbh->setOptions([
-            'dsn'           => 'sqlite::memory:', // In-memory database
-            'fetch_mode'    => \PDO::FETCH_ASSOC
+                'dsn'           => 'sqlite::memory:', // In-memory database
+                'fetch_mode'    => \PDO::FETCH_ASSOC
             ]);
             self::$dbh->connect();
         }
     }
+
 
     /**
      * Test
