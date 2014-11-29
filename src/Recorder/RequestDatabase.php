@@ -32,14 +32,15 @@ class RequestDatabase extends CDatabaseBasic implements IDatabaseHandler
      * @param array with the column names where the values is to be inserted
      * @param array with the values
      *
-     * @return void
+     * @return boolean TRUE on success, FALSE on failure
      */
     public function insertRecord($columns, $values)
     {
         $this->createTableIfNotExists();
 
         parent::insert($this->table, $columns, $values);
-        $this->execute();
+        
+        return $this->execute();
     }
 
 
@@ -49,7 +50,7 @@ class RequestDatabase extends CDatabaseBasic implements IDatabaseHandler
      *
      * @return void
      */
-    public function createTableIfNotExists()
+    private function createTableIfNotExists()
     {
         $this->createTable("IF NOT EXISTS $this->table", [
             'session'   => ['varchar(20)'],
@@ -81,12 +82,13 @@ class RequestDatabase extends CDatabaseBasic implements IDatabaseHandler
     /**
      * Delete all records in the records database table.
      *
-     * @return void
+     * @return boolean TRUE on success, FALSE on failure
      */
     public function deleteAll()
     {
         $this->delete($this->table);
-        $this->execute();
+        
+        return $this->execute();
     }
 
 }

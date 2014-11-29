@@ -30,8 +30,8 @@ class RequestRecordAnax extends RequestRecord
 
 
     /**
-     * Gets the session id or creates a session unique
-     * in the table where the request records are saved.
+     * Gets the session id or creates a session id unique
+     * in the table where the requests are saved.
      *
      * @return session id as string
      */

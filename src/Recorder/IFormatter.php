@@ -14,7 +14,7 @@ interface IFormatter
 	 *
 	 * @param array with records of requests
 	 *
-	 * @return output data
+	 * @return mixed data
 	 */
 	public function getOutput($records);
 }

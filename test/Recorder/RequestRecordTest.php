@@ -7,7 +7,7 @@ class RequestRecordTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        // Setting up server environment variables
+        // Setting up server environment variables (exists as a global variable)
         $_SERVER = [
             'REQUEST_URI' => 'TestUri',
             'REQUEST_METHOD' => 'GET'
