@@ -5,15 +5,8 @@
  *
  *
  */
-class MockCRequestBasic
+Interface MockCRequestBasic
 {
-    public function getCurrentUrl()
-    {
-
-    }
-
-    public function getServer($key)
-    {
-    
-    }
+    public function getCurrentUrl();
+    public function getServer($key);
 }

@@ -5,15 +5,8 @@
  *
  *
  */
-class MockCSession
+Interface MockCSession
 {
-    public function set()
-    {
-
-    }
-
-    public function get()
-    {
-
-    }
+    public function set();
+    public function get();
 }
