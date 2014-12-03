@@ -40,7 +40,8 @@ class RequestRecordAnax extends RequestRecord
         $id = $this->di->session->get('requestRecorderId');
 
         if ($id == null) {
-            $this->di->session->set('requestRecorderId', time()); // Figure out something better than time()
+            $id = time();
+            $this->di->session->set('requestRecorderId', $id); // Figure out something better than time()
         }
 
         return $id;
